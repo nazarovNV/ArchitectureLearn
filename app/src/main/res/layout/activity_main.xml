@@ -17,7 +17,7 @@
         android:id="@+id/receiveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GET DATA"
+        android:text="Get user data"
         android:textSize="24sp"
         android:layout_marginTop="12dp"
         android:padding="12dp"/>
@@ -41,7 +41,7 @@
         android:id="@+id/sendButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SAVE DATA"
+        android:text="Save user name"
         android:layout_marginTop="12dp"
         android:textSize="24sp"
         android:padding="12dp"
