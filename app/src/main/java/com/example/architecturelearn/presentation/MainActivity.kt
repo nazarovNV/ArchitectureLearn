@@ -14,15 +14,24 @@ import com.example.architecturelearn.domain.usecase.GetUserNameUseCase
 import com.example.architecturelearn.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : Activity() {
-    private val sharedPrefUserStorage by lazy(LazyThreadSafetyMode.NONE) { SharedPrefUserStorage(context = applicationContext) }
-    private val userRepository by lazy(LazyThreadSafetyMode.NONE) { UserRepositoryImpl(userStorage = sharedPrefUserStorage) }
-    private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) { GetUserNameUseCase(userRepository = userRepository) }
-    private val saveUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) { SaveUserNameUseCase(userRepository = userRepository) }
+    private val sharedPrefUserStorage by lazy(LazyThreadSafetyMode.NONE) {
+        SharedPrefUserStorage(context = applicationContext)
+    }
+    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {
+
+
+        UserRepositoryImpl(userStorage = sharedPrefUserStorage)
+    }
+    private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {
+        GetUserNameUseCase(userRepository = userRepository)
+    }
+    private val saveUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {
+        SaveUserNameUseCase(userRepository = userRepository)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
 
         val dataTextView = findViewById<TextView>(R.id.dataTextView)
         val dataEditView = findViewById<EditText>(R.id.dataEditText)
@@ -32,12 +41,12 @@ class MainActivity : Activity() {
         sendButton.setOnClickListener {
             val text = dataEditView.text.toString()
             val param = SaveUserNameParam(text)
-            val result : Boolean = saveUserNameUseCase.execute(param)
+            val result: Boolean = saveUserNameUseCase.execute(param)
             dataTextView.text = "Save result = $result"
 
         }
         receiveButton.setOnClickListener {
-            val userName : UserName = getUserNameUseCase.execute()
+            val userName: UserName = getUserNameUseCase.execute()
             dataTextView.text = "${userName.firstName} ${userName.lastName}"
 
         }
