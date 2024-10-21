@@ -69,6 +69,11 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
+    val koinVersion = "4.0.0"
+    implementation("io.insert-koin:koin-android:$koinVersion")
+    implementation("io.insert-koin:koin-core:$koinVersion")
+    testImplementation("io.insert-koin:koin-test:$koinVersion")
+
     implementation("com.google.android.material:material:1.12.0")
     implementation(project(":domain"))
     implementation(project(":data"))

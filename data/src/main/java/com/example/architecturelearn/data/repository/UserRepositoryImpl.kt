@@ -11,7 +11,6 @@ class UserRepositoryImpl(private val userStorage: UserStorage) : UserRepository 
     override fun saveName(saveParam: SaveUserNameParam): Boolean {
         val user = mapToStorage(saveParam)
 
-
         val result = userStorage.save(user)
         return result
     }
