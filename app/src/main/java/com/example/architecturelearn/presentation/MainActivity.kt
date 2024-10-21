@@ -14,13 +14,8 @@ import com.example.architecturelearn.domain.usecase.GetUserNameUseCase
 import com.example.architecturelearn.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : Activity() {
-    private val sharedPrefUserStorage by lazy(LazyThreadSafetyMode.NONE) {
-        SharedPrefUserStorage(context = applicationContext)
-    }
     private val userRepository by lazy(LazyThreadSafetyMode.NONE) {
-
-
-        UserRepositoryImpl(userStorage = sharedPrefUserStorage)
+        UserRepositoryImpl(userStorage = SharedPrefUserStorage(context = applicationContext))
     }
     private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {
         GetUserNameUseCase(userRepository = userRepository)
