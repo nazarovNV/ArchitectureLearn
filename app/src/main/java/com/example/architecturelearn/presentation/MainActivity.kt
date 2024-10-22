@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             dataTextView.text = text
         }
 
+
         sendButton.setOnClickListener {
             val text = dataEditView.text.toString()
             vm.save(text)
