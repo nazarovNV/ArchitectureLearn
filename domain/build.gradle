@@ -16,6 +16,14 @@ tasks.withType(KotlinCompile).configureEach {
     }
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation libs.kotlin.stdlib
+
+    testImplementation "org.junit.jupiter:junit-jupiter:5.8.2"
+    testImplementation libs.mockito.core
+    testImplementation libs.mockito.kotlin
 }
