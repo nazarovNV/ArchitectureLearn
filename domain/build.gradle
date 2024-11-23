@@ -23,7 +23,7 @@ test {
 dependencies {
     implementation libs.kotlin.stdlib
 
-    testImplementation "org.junit.jupiter:junit-jupiter:5.8.2"
+    testImplementation libs.junit.jupiter
     testImplementation libs.mockito.core
     testImplementation libs.mockito.kotlin
 }

@@ -21,15 +21,6 @@ class MainViewModel @Inject constructor(
     val resultLive: LiveData<String> = resultLiveMutable
 
 
-    init {
-        Log.e("AAA", "VM created")
-    }
-
-    override fun onCleared() {
-        Log.e("AAA", "VM cleared")
-        super.onCleared()
-    }
-
     fun save(text: String) {
         val param = SaveUserNameParam(text)
         val resultData: Boolean = saveUserNameUseCase.execute(param)

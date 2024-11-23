@@ -1,6 +1,5 @@
 package com.example.architecturelearn.domain.usecase
 
-import com.example.architecturelearn.domain.models.SaveUserNameParam
 import com.example.architecturelearn.domain.models.UserName
 import com.example.architecturelearn.domain.repository.UserRepository
 import org.junit.jupiter.api.Assertions

@@ -73,10 +73,14 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.fragment.ktx)
 
+    testImplementation (libs.junit.jupiter)
+    testImplementation (libs.mockito.core)
+    testImplementation (libs.mockito.kotlin)
 
     implementation("com.google.android.material:material:1.12.0")
     implementation(project(":domain"))
     implementation(project(":data"))
+
 }
 
 kapt {
