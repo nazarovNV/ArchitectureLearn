@@ -98,11 +98,14 @@ class MainViewModelTest {
 
         Mockito.`when`(getUserNameUseCase.execute()).thenReturn(testUserName)
 
-        val viewModel = MainViewModel(getUserNameUseCase= getUserNameUseCase, saveUserNameUseCase = saveUserNameUseCase)
+        val viewModel = MainViewModel(
+            getUserNameUseCase = getUserNameUseCase,
+            saveUserNameUseCase = saveUserNameUseCase
+        )
         viewModel.load()
 
-        val expected =  "${testUserName.firstName} ${testUserName.lastName}"
-        val actual =viewModel.resultLive.value
+        val expected = "${testUserName.firstName} ${testUserName.lastName}"
+        val actual = viewModel.resultLive.value
 
         Assertions.assertEquals(expected, actual)
 
