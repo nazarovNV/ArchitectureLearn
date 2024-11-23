@@ -1,4 +1,4 @@
 package com.example.architecturelearn.domain.models
 
-class SaveUserNameParam(val name : String) {
+data class SaveUserNameParam(val name : String) {
 }
