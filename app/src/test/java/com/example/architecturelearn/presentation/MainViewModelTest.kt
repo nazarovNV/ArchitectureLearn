@@ -16,12 +16,6 @@ class MainViewModelTest {
     private val saveUserNameUseCase = mock<SaveUserNameUseCase>()
     private lateinit var viewModel: MainViewModel
 
-    @AfterEach
-    fun afterEach() {
-        Mockito.reset(getUserNameUseCase)
-        Mockito.reset(saveUserNameUseCase)
-    }
-
     @BeforeEach
     fun beforeEach() {
         viewModel = MainViewModel(
@@ -29,6 +23,13 @@ class MainViewModelTest {
             saveUserNameUseCase = saveUserNameUseCase
         )
     }
+
+    @AfterEach
+    fun afterEach() {
+        Mockito.reset(getUserNameUseCase)
+        Mockito.reset(saveUserNameUseCase)
+    }
+
 
     @Test
     fun `should save username and return true`() {
